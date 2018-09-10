@@ -14,5 +14,5 @@ int     my_putstr(const char*);
 
 Test(putstr, first_test)
 {
-    cr_assert(my_putstr("Hello World\n") == 12);
+    cr_assert(my_putstr("Hello World\n") == 14);
 }
