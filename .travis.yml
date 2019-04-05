@@ -1,13 +1,13 @@
 services:
-    - docker
+ - docker
 
 before_install:
-    - docker pull epitechcontent/epitest-docker
+ - docker pull epitechcontent/epitest-docker
 
 stages:
-    - build
+ - build
 
 jobs:
-    include:
-        - stage: build
-        script: docker run -it epitechcontent/epitest-docker bash "make"
+ include:
+  - stage: build
+  script: docker run -it epitechcontent/epitest-docker bash "make"
