@@ -1,13 +1,15 @@
-services:
+language: c
+
+services: 
  - docker
 
-before_install:
- - docker pull epitechcontent/epitest-docker
+before_install: 
+ - "docker pull epitechcontent/epitest-docker"
 
-stages:
- - build
+stages: 
+  - build
 
-jobs:
- include:
+jobs: 
+ include: 
   - stage: build
-  script: docker run -it epitechcontent/epitest-docker bash "make"
+  script: "docker run -it epitechcontent/epitest-docker bash \"make\""
