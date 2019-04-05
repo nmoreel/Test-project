@@ -36,7 +36,7 @@ ldflags.tests := -lcriterion -lgcov -lmimick -L./tests/lib/
 
 CFLAGS = ${cflags.${BUILD}} ${cflags.common}
 LDFLAGS = ${ldflags.${BUILD}} ${ldflags.common}
-				
+
 $(NAME) : $(OBJS)
 		ar rc $(NAME) $(OBJS)
 
@@ -47,7 +47,7 @@ set_rules :
 
 $(TEST_NAME): $(OBJS_TEST) set_rules $(OBJS)
 			$(CC) -o $(TEST_NAME) $(OBJS_TEST) $(OBJS) $(LDFLAGS)
-				
+
 tests_run : $(TEST_NAME)
 			@./$(TEST_NAME)
 			@gcovr
@@ -69,6 +69,6 @@ re		: fclean all
 
 .c.o:
 		@echo Compile $< source file in $(BUILD) mode.
-		$(CC) $(CFLAGS) -c $< -o $@
+		@$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re tests_run

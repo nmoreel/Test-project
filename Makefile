@@ -30,7 +30,7 @@ ldflags.tests := -lcriterion -lgcov
 
 CFLAGS = ${cflags.${BUILD}} ${cflags.common}
 LDFLAGS = ${ldflags.${BUILD}} ${ldflags.common}
-				
+
 $(NAME) : $(OBJS) $(OBJS_MAIN)
 		make -C lib/libstring
 		gcc -o $(NAME) $(OBJS) $(OBJS_MAIN) $(LDFLAGS)
@@ -48,7 +48,7 @@ set_rules :
 			$(eval BUILD=tests)
 			$(eval CFLAGS=${cflags.tests} $(cflags.common))
 			$(eval LDFLAGS=${ldflags.tests} $(ldflags.common))
-				
+
 tests_run : set_rules $(TEST_NAME)
 			@./$(TEST_NAME)
 			@gcovr
@@ -57,7 +57,7 @@ clean	:
 		rm -rf $(OBJS)
 		rm -rf $(OBJS_MAIN)
 		rm -rf $(OBJS_TEST)
-		make -C lib/libstring clean
+		@make -C lib/libstring clean
 		find -name "*.gcda" -delete
 		find -name "*.gcno" -delete
 		find -name "*.gcov" -delete
@@ -65,7 +65,7 @@ clean	:
 fclean	: clean
 		rm -rf $(NAME)
 		rm -rf $(TEST_NAME)
-		make -C lib/libstring clean
+		@make -C lib/libstring clean
 
 re		: fclean all
 
