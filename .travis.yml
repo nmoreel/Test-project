@@ -1,6 +1,7 @@
 language: c
 
-service: docker
+services:
+  - docker
 
 stages:
   - build
