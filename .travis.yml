@@ -1,12 +1,12 @@
 language: c
 
 services:
-  - docker
+    - docker
 
 jobs:
-  include:
-    - stage: build
-    install:
-      - docker pull epitechcontent/epitest-docker
-    script: 
-      - docker run -v `pwd`:/usr/local/bugs bash -c "cd /usr/local/bugs;make"
+    include:
+      - stage: build
+        install:
+          - docker pull epitechcontent/epitest-docker
+        script: 
+          - docker run -v `pwd`:/usr/local/bugs bash -c "cd /usr/local/bugs;make"
