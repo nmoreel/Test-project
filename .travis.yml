@@ -11,4 +11,4 @@ jobs:
         before_script:
           - docker pull epitechcontent/epitest-docker
         script: 
-          - docker run -v $PWD:/usr/local/bugs bash -c "cd /usr/local/bugs && make"
+          - docker run -v $PWD:/usr/local/bugs epitechcontent/epitest-docker bash -c "cd /usr/local/bugs && make"
