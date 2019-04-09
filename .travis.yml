@@ -5,6 +5,10 @@ compiler: gcc
 services:
     - docker
 
+stages:
+    - build
+    - tests
+
 jobs:
     include:
       - stage: build
@@ -12,3 +16,8 @@ jobs:
           - docker pull epitechcontent/epitest-docker
         script: 
           - docker run -v $PWD:/usr/local/bugs epitechcontent/epitest-docker bash -c "cd /usr/local/bugs && make"
+      - stage: tests
+        before_script:
+          - docker pull epitechcontent/epitest-docker
+        script:
+          - docker run -v $PWD:/usr/local/bugs epitechcontent/epitest-docker bash -c "cd /usr/local/bugs && make tests_run
