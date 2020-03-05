@@ -1,0 +1,13 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:    
+    steps:
+      - name: "MAKE"
+        uses: docker://epitechcontent/epitest-docker:lastest
+        run: make
+        
