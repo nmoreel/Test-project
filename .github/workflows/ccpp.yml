@@ -11,5 +11,5 @@ jobs:
     container: epitechcontent/epitest-docker
     steps:
       - name: "MAKE"
-        run: docker run -v $PWD:/usr/local/bugs epitechcontent/epitest-docker bash -c "cd /usr/local/bugs && make"
+        run: /usr/bin/docker run -v $PWD:/usr/local/bugs epitechcontent/epitest-docker bash -c "cd /usr/local/bugs && make"
         
