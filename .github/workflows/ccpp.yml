@@ -11,5 +11,6 @@ jobs:
     container: epitechcontent/epitest-docker:lastest
     steps:
       - name: "MAKE"
-        run: | make
+        run: |
+          make
         
