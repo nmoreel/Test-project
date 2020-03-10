@@ -8,6 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "MAKE"
+      - name: Checkout action
+        uses: actions/checkout@master
+      - name: "make"
         uses: ./.github/actions/epitest-docker-action@master
         
