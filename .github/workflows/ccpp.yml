@@ -11,5 +11,6 @@ jobs:
       - name: Checkout action
         uses: actions/checkout@master
       - name: "make"
-        uses: ./.github/actions/epitest-docker-action@master
+        uses: nmoreel/epitest-docker-action@master
+
         
