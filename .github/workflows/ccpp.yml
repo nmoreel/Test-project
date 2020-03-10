@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "MAKE"
-        uses: .github/actions/epitest-docker-action@master
+        uses: ./.github/actions/epitest-docker-action@master
         
