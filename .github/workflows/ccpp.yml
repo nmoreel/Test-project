@@ -3,13 +3,11 @@ name: C/C++ CI
 on:
   push:
     branches: [ master ]
-
+    
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    container: epitechcontent/epitest-docker
     steps:
       - name: "MAKE"
-        run: /usr/bin/docker run -v $PWD:/usr/local/bugs epitechcontent/epitest-docker bash -c "cd /usr/local/bugs && make"
+        uses: .github/actions/epitest-docker-action@master
         
