@@ -1,0 +1,11 @@
+name: 'Epitech docker'
+description: 'Lancer un build sur le docker de test'
+
+runs:
+  using: 'docker'
+  image: 'docker://epitechcontent/epitest-docker'
+  entrypoint: bash
+  args:
+    - '-v $PWD:/usr/local/bugs'
+    - '-c'
+    - 'cd /usr/local/bugs && make'
